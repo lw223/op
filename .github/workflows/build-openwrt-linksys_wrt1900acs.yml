@@ -41,12 +41,12 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
 
     steps:
     - name: Checkout
-      uses: actions/checkout@main
+      uses: actions/checkout@v1
 
     - name: Initialization environment
       env:
@@ -62,7 +62,7 @@ jobs:
         sudo chown $USER:$GROUPS /workdir
         echo "COMPILE_STARTINGTIME=$(date +"%Y.%m.%d.%H%M")" >> $GITHUB_ENV
 
-    - name: Clone source code
+    - name: test code
       working-directory: /workdir
       run: |
         df -hT $PWD
@@ -90,7 +90,7 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
-    - name: Download package
+    - name: build package
       id: package
       run: |
         cd openwrt
