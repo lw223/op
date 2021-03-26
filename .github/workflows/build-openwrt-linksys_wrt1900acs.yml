@@ -25,8 +25,8 @@ on:
     - cron: '0 18 * * *'
 
 env:
-  REPO_URL: https://github.com/hikelin19871112/lede
-  REPO_BRANCH: master
+  REPO_URL: https://github.com/M33FT/openwrt-packages
+  REPO_BRANCH: dev-19.07
   FEEDS_CONF: router/linksys_wrt1900acs/feeds.conf.default
   CONFIG_FILE: router/linksys_wrt1900acs/.config
   DIY_P1_SH: router/linksys_wrt1900acs/diy-part1.sh
@@ -46,7 +46,7 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@main
 
     - name: Initialization environment
       env:
