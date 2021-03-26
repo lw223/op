@@ -22,10 +22,10 @@ on:
       #- 'router/linksys_wrt1900acs/.config'
       #- '.github/workflows/build-openwrt-linksys_wrt1900acs.yml'
   schedule:
-    - cron: '0 17 * * *'
+    - cron: '0 18 * * *'
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/hikelin19871112/lede
   REPO_BRANCH: master
   FEEDS_CONF: router/linksys_wrt1900acs/feeds.conf.default
   CONFIG_FILE: router/linksys_wrt1900acs/.config
@@ -173,9 +173,9 @@ jobs:
         body: |
           This is OpenWrt firmware for ${{ env.DEVICE_NAME }}
           * Firmware information
-          Default IP: 192.168.1.1
-          Default username: root
-          Default password: password
-          Default WIFI name: OpenWrt
-          Default WIFI password: none
+          Default IP: 10.10.1.1
+          Default username: lw223
+          Default password: win109975
+          Default WIFI name: LEDE_5GHz
+          Default WIFI password: ml15959971858
 
